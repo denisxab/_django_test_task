@@ -1,0 +1,98 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+    <p>
+        Задание: реализовать веб-приложение.
+    </p>
+    <p>
+        В качестве интерфейса сделать страницу
+        с формой для загрузки текстового файла,
+        после загрузки и обработки файла отображается
+        таблица с 50 словами с колонками:
+    </p>
+
+    <div class="link">
+        {% if file_name %}
+            <p> Текущей файл: {{ file_name }}</p>
+            <a href="{% url 'form_tf_idf' %}"> Загрузить другой файл для решения тестового задания</a>
+        {% else %}
+            <a href="{% url 'form_tf_idf' %}"> Загрузить файл для решения тестового задания</a>
+        {% endif %}
+    </div>
+
+    {% if file_name and words %}
+
+        <style>
+            .table-words {
+                background: #fcefd8;
+                margin: 10px auto;
+                width: 100%;
+                font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+                border-radius: 4px;
+            }
+
+            table {
+                border-collapse: collapse;
+                border-radius: 30px;
+                border-style: hidden; /* hide standard table (collapsed) border */
+                box-shadow: 0 0 0 1px #666; /* this draws the table border  */
+            }
+
+            td {
+                border: 1px solid #404040;
+            }
+
+
+            .title-column {
+                background-color: #cbcbab;
+                padding: 15px;
+                margin: 5px;
+            }
+
+            .title-column:first-child {
+                border-radius: 4px 0 0 0;
+            }
+
+            .title-column:last-child {
+                border-radius: 0 4px 0 0;
+            }
+
+            .table-box {
+                text-align: center;
+            }
+
+
+        </style>
+
+
+        <div class="table-box">
+
+
+            <table class="table-words">
+                <tr>
+                    <td class="title-column">
+                        Слово
+                    </td>
+                    <td class="title-column">
+                        Частота слова в файле
+                    </td>
+                    <td class="title-column">
+                        Обратная частота слова в файле
+                    </td>
+                </tr>
+                {% for k,v in words.items %}
+                    <tr>
+                        <td style="text-align: left"> {{ k }}</td>
+                        <td> {{ v.0 }}</td>
+                        <td> {{ v.1 }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+
+{% endblock body %}
+
+
+

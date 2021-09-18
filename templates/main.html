@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+
+    <style>
+        h1 {
+            font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+        }
+
+        .header {
+            padding: 10px;
+            background: #fcefd8;
+            border: 1px solid #767474;
+
+        }
+
+        .appeal {
+            background: #dff1e9;
+            border-radius: 4px;
+            font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+            font-size: 16px;
+
+
+            box-shadow: 5px 5px 30px black;
+
+            width: 50%;
+            margin: 100px auto;
+            border: 1px solid #767474;
+        }
+
+        .body-appeal {
+            margin: 15px;
+        }
+
+        .link {
+            border: 1px solid #767474;
+            text-align: center;
+            padding: 1px;
+            margin: 10px auto;
+            width: 100%;
+            background: #fcefd8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="appeal">
+    <h1 class="header">
+        {{ title }}
+    </h1>
+    <div class="body-appeal">
+        {% block body %}
+        {% endblock body %}
+    </div>
+</div>
+</body>
+</html>
