@@ -10,4 +10,8 @@
 [Пример файла с тексом](https://drive.google.com/file/d/17kJK--_0JE2ulqr6QU6yzRx03_uG-_mc/view?usp=sharing)
 
 
+![](https://i.imgur.com/c0ThR5n.png)
+
+![](https://i.imgur.com/Q0lq18H.png)
+
 ![](https://i.imgur.com/UncdeG7.png)
